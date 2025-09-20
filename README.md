@@ -9,21 +9,6 @@ extern "C" {
 
 ```
 
-```rust
-fn sayhelloworld() {
-    unsafe {
-            let lib = libloading::Library::new("lib").unwrap();
-            let fun: libloading::Symbol<unsafe extern "C" fn()> =
-                lib.get(b"sayhelloworld").unwrap();
-            fun();
-    }
-}
-fn add(a: i32, b: i32) -> i32 {
-    unsafe {
-            let lib = libloading::Library::new("lib").unwrap();
-            let fun: libloading::Symbol<unsafe extern "C" fn(a: i32, b: i32) -> i32> =
-                lib.get(b"add").unwrap();
-            fun(a, b)
-    }
-}
-```
+WARN: just a sample of idea, maybe panic
+
+you maybe want use https://lib.rs/crates/subsecond https://lib.rs/crates/hot-lib-reloader
